@@ -1,0 +1,44 @@
+<section id=content>
+    <header>
+        <h1>Provider Info Lookup</h1>
+    </header>
+
+    <section class=npi-lookup-box>
+        <p class=help-description>Enter the 10-digit NPI# for the provider you want to look up below.</p>
+        <p class=help-description>Example: 1558857250 or 1245319599</p>
+
+        <form method=POST action='/providers/lookup'>
+            <input name=number class=npi-lookup-textbox type=text placeholder="NPI#" autofocus>
+            <button class=npi-lookup-submit>Look Up</button>
+        </form>
+
+        <% if @error_msg %>
+            <p class=error-text>Error: <%= @error_msg %></p>
+        <% end %>
+    </section>
+
+    <table class=provider-info-table>
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Taxonomy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @provider_infos.each do |info| %>
+                <tr>
+                    <td class=provider-info-table-number><%= info.number %></td>
+                    <td class=provider-info-table-name><%= info.display_name %></td>
+                    <td class=provider-info-table-address>
+                        <% info.display_address.each_line do |line| %>
+                            <%= line %> <br>
+                        <% end %>
+                    </td>
+                    <td class=provider-info-table-taxonomy><%= info.display_taxonomy %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</section>

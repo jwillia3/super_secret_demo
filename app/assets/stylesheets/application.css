@@ -1,0 +1,54 @@
+body, input, button {
+    font: 13pt 'roboto';
+}
+
+h1 {
+    text-align: center;
+}
+
+#content {
+    width: 960px;
+    margin: 0px auto;
+}
+
+button {
+    padding: 0.125em;
+}
+
+.error-text {
+    color: red;
+}
+
+.npi-lookup-box {
+    width: fit-content;
+    margin: 0px auto;
+}
+
+.help-description {
+    line-height: 1em;
+    font-size: 80%;
+    color: #606060;
+}
+
+.provider-info-table {
+    margin: 3em 0px 0px 0px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 80%;
+}
+
+.provider-info-table td,
+.provider-info-table th
+{
+    border: 1px solid black;
+    padding: .5em .5em;
+}
+
+.provider-info-table > tbody > tr:nth-child(even) {
+    background: #eee;
+}
+
+.provider-info-table-address {
+    text-align: center;
+    font-size: 80%;
+}

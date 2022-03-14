@@ -1,0 +1,2 @@
+class ProviderInfo < ApplicationRecord
+end
